@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-27T02:06:56.528870" rpa="false" schemaversion="5">
+<suite id="s1" name="TestesBDDApi" source="/Users/rodrigobalbino/Documents/testesrobotframework-master/Demos/TestesApi/testes/TestesBDDApi.robot">
+<test id="s1-t1" name="Cenario: POST - Create" line="17">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:56.736699" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>users</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-27T02:06:56.736594" elapsed="0.000177"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:56.736216" elapsed="0.000588"/>
+</kw>
+<kw name="Quando realizar um POST para o endpoint &quot;api/users&quot; com nome &quot;George&quot; e job &quot;QA&quot;" owner="ResourceBDD" source_name="Quando realizar um POST para o endpoint &quot;${uri}&quot; com nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-07-27T02:06:56.737107" level="INFO">${body} = {'name': 'George', 'job': 'QA'}</msg>
+<var>${body}</var>
+<arg>name=${NAME}</arg>
+<arg>job=${JOB}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-07-27T02:06:56.737005" elapsed="0.000111"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.206727" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '31'} 
+ body=b'{"name": "George", "job": "QA"}' 
+ </msg>
+<msg time="2024-07-27T02:06:57.206850" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Sat, 27 Jul 2024 05:06:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '78', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056801&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=I4S9yYCq8UHLPDW4NmE4lYCJSY21y0M8txdSHowwfIo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056801&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=I4S9yYCq8UHLPDW4NmE4lYCJSY21y0M8txdSHowwfIo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4e-6d4ZMx05Ym9FN+3MBefaPzeT7M4"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0139f80112-GRU'} 
+ body={"name":"George","job":"QA","id":"654","createdAt":"2024-07-27T05:06:41.785Z"} 
+ </msg>
+<msg time="2024-07-27T02:06:57.206927" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-27T02:06:57.207067" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>users</arg>
+<arg>${uri}</arg>
+<arg>json=${body}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-27T02:06:56.737157" elapsed="0.469932"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.207474" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.207278" elapsed="0.000231"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.208124" level="INFO">${payload} = {'name': 'George', 'job': 'QA', 'id': '654', 'createdAt': '2024-07-27T05:06:41.785Z'}</msg>
+<var>${payload}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.207618" elapsed="0.000525"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.208562" level="INFO">${IdUser} = 654</msg>
+<var>${IdUser}</var>
+<arg>${payload['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.208231" elapsed="0.000347"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${payload['name']}</arg>
+<arg>${NAME}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.208662" elapsed="0.000312"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${payload['job']}</arg>
+<arg>${JOB}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.209054" elapsed="0.000288"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${payload['id']}</arg>
+<arg>${IdUser}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.209419" elapsed="0.000281"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.209781" elapsed="0.000314"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${IdUser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.210174" elapsed="0.000091"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:56.736897" elapsed="0.473422"/>
+</kw>
+<kw name="Então status code da resposta sera 201" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.211149" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${status_code}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.210696" elapsed="0.000503"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.210500" elapsed="0.000742"/>
+</kw>
+<kw name="E sera retornado no response a chave &quot;id&quot;" owner="ResourceBDD" source_name="E sera retornado no response a chave &quot;${Key}&quot;">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<arg>${Key}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.211535" elapsed="0.000285"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.211367" elapsed="0.000493"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:56.736031" elapsed="0.475929"/>
+</test>
+<test id="s1-t2" name="Cenario: GET - Single User" line="23">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.212680" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>users</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-27T02:06:57.212583" elapsed="0.000230"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.212401" elapsed="0.000695"/>
+</kw>
+<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot;" owner="ResourceBDD" source_name="Quando realizar um GET para o endpoint &quot;${uri}&quot;">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.260974" level="INFO">GET Request : url=https://reqres.in/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-07-27T02:06:57.261065" level="INFO">GET Response : url=https://reqres.in/api/users/ 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 27 Jul 2024 05:06:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6151', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0409cdaede-GRU', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-07-27T02:06:57.261140" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-27T02:06:57.261253" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>users</arg>
+<arg>${uri}</arg>
+<arg>${IdUser}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.213388" elapsed="0.047883"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.261597" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.261437" elapsed="0.000187"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.213224" elapsed="0.048445"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.262450" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${status_code}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.262054" elapsed="0.000442"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.261840" elapsed="0.000700"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.212129" elapsed="0.050503"/>
+</test>
+<test id="s1-t3" name="Cenario: PUT - Update" line="28">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.263246" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>users</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-27T02:06:57.263169" elapsed="0.000169"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.263009" elapsed="0.000366"/>
+</kw>
+<kw name="Quando realizar um PUT para o endpoint &quot;/api/users/&quot; alterando os dados nome &quot;George1&quot; e job &quot;QA1&quot;" owner="ResourceBDD" source_name="Quando realizar um PUT para o endpoint &quot;${uri}&quot; alterando os dados nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.263835" level="INFO">${body} = {'name': 'George1', 'job': 'QA1'}</msg>
+<var>${body}</var>
+<arg>name=${NAME}</arg>
+<arg>job=${JOB}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.263671" elapsed="0.000178"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.727360" level="INFO">PUT Request : url=https://reqres.in/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '33'} 
+ body=b'{"name": "George1", "job": "QA1"}' 
+ </msg>
+<msg time="2024-07-27T02:06:57.727610" level="INFO">PUT Response : url=https://reqres.in/api/users/ 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"45-ocwq7oS97FMUi+zvubtdnRBSYTE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a045ceb0188-GRU', 'Content-Encoding': 'gzip'} 
+ body={"name":"George1","job":"QA1","updatedAt":"2024-07-27T05:06:42.305Z"} 
+ </msg>
+<msg time="2024-07-27T02:06:57.727842" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-27T02:06:57.728043" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>users</arg>
+<arg>${uri}</arg>
+<arg>json=${body}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.263917" elapsed="0.464333"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.728907" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.728600" elapsed="0.000345"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.729727" level="INFO">${payload} = {'name': 'George1', 'job': 'QA1', 'updatedAt': '2024-07-27T05:06:42.305Z'}</msg>
+<var>${payload}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.729082" elapsed="0.000669"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${payload['name']}</arg>
+<arg>${NAME}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.729864" elapsed="0.000385"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${payload['job']}</arg>
+<arg>${JOB}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.730340" elapsed="0.000341"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.730769" elapsed="0.000378"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${IdUser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.731229" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.263500" elapsed="0.467899"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-27T02:06:57.732784" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${status_code}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.732229" elapsed="0.000640"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.731621" elapsed="0.001325"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.262783" elapsed="0.470312"/>
+</test>
+<test id="s1-t4" name="Cenario: DELETE" line="33">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:57.733966" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>users</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-27T02:06:57.733840" elapsed="0.000288"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.733599" elapsed="0.000591"/>
+</kw>
+<kw name="Quando realizar um DELETE para o endpoint &quot;/api/users/&quot; para usuario criado" owner="ResourceBDD" source_name="Quando realizar um DELETE para o endpoint &quot;${uri}&quot; para usuario criado">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:58.192072" level="INFO">DELETE Request : url=https://reqres.in/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-07-27T02:06:58.192327" level="INFO">DELETE Response : url=https://reqres.in/api/users/ 
+ status=204, reason=No Content 
+ headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a075acba531-GRU'} 
+ body=None 
+ </msg>
+<msg time="2024-07-27T02:06:58.192544" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-27T02:06:58.192882" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>users</arg>
+<arg>${uri}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-27T02:06:57.734574" elapsed="0.458344"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:58.193751" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.193369" elapsed="0.000432"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.734366" elapsed="0.459532"/>
+</kw>
+<kw name="Então status code da resposta sera 204" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-27T02:06:58.195324" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${status_code}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.194685" elapsed="0.000709"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:58.194272" elapsed="0.001177"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:57.733275" elapsed="0.462317"/>
+</test>
+<test id="s1-t5" name="Cenario: Validar usuario deletado" line="38">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:58.196635" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>users</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-07-27T02:06:58.196514" elapsed="0.000316"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:58.196251" elapsed="0.000632"/>
+</kw>
+<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot; para usuario deletado" owner="ResourceBDD" source_name="Quando realizar um GET para o endpoint &quot;${uri}&quot; para usuario deletado">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-07-27T02:06:58.283745" level="INFO">GET Request : url=https://reqres.in/api/users/ 
+ path_url=/api/users/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg time="2024-07-27T02:06:58.284328" level="INFO">GET Response : url=https://reqres.in/api/users/ 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6152', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0a7f1f011e-GRU', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-07-27T02:06:58.284592" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-07-27T02:06:58.284955" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>users</arg>
+<arg>${uri}</arg>
+<arg>${IdUser}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.197316" elapsed="0.087702"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-07-27T02:06:58.286188" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.285615" elapsed="0.000666"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.286574" elapsed="0.001431"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:58.197085" elapsed="0.091016"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-27T02:06:58.289200" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>${status_code}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-07-27T02:06:58.288745" elapsed="0.000519"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:58.288416" elapsed="0.000902"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:06:58.195839" elapsed="0.093633"/>
+</test>
+<status status="PASS" start="2024-07-27T02:06:56.529441" elapsed="1.760628"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="TestesBDDApi">TestesBDDApi</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

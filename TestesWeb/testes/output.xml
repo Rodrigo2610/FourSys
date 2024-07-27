@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-27T02:09:50.896227" rpa="false" schemaversion="5">
+<suite id="s1" name="TestesBDDWeb" source="/Users/rodrigobalbino/Documents/testesrobotframework-master/Demos/TestesWeb/testes/TestesBDDWeb.robot">
+<test id="s1-t1" name="Cenário 01: Iniciar Novo Cadastro" line="8">
+<kw name="Dado que eu esteja na tela HOME" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que eu esteja na tela HOME" owner="ResourceBDD">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:09:51.073873" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-27T02:09:51.073787" elapsed="6.017758"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:51.073693" elapsed="6.018144"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:09:51.073558" elapsed="6.018338"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:51.073177" elapsed="6.018809"/>
+</kw>
+<kw name="Quando eu informar Nome e Email" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="eu informar Nome e Email" owner="ResourceBDD">
+<kw name="preencher nome e email" owner="ResourceBDD">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2024-07-27T02:09:57.093760" level="INFO">${NOMEFAKE} = Rhavi Moreira</msg>
+<var>${NOMEFAKE}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2024-07-27T02:09:57.093476" elapsed="0.000319"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:09:57.094188" level="INFO">Clicking element 'name=name'.</msg>
+<arg>${NAME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:09:57.093884" elapsed="0.039291"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:09:59.134053" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:09:57.133282" elapsed="2.000837"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:09:59.134386" level="INFO">Typing text 'Rhavi Moreira' into text field 'name=name'.</msg>
+<arg>${NAME}</arg>
+<arg>${NOMEFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:09:59.134246" elapsed="0.071835"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${NOMEFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:09:59.206196" elapsed="0.000145"/>
+</kw>
+<kw name="Email" owner="FakerLibrary">
+<msg time="2024-07-27T02:09:59.206675" level="INFO">${EMAILFAKE} = julia24@example.com</msg>
+<var>${EMAILFAKE}</var>
+<status status="PASS" start="2024-07-27T02:09:59.206423" elapsed="0.000269"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:09:59.206854" level="INFO">Clicking element 'xpath=.//input[contains(@data-qa,'signup-email')]'.</msg>
+<arg>${EMAIL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:09:59.206757" elapsed="0.022403"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:01.231612" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:09:59.229296" elapsed="2.002375"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:01.231911" level="INFO">Typing text 'julia24@example.com' into text field 'xpath=.//input[contains(@data-qa,'signup-email')]'.</msg>
+<arg>${EMAIL}</arg>
+<arg>${EMAILFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:01.231777" elapsed="0.036643"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${EMAILFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:01.268537" elapsed="0.000121"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:03.270296" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:01.268783" elapsed="2.001577"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:57.093389" elapsed="6.177029"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:57.093289" elapsed="6.177154"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:09:57.092928" elapsed="6.177535"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:57.092591" elapsed="6.177894"/>
+</kw>
+<kw name="E clicar no botão Signup" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="clicar no botão Signup" owner="ResourceBDD">
+<kw name="clicar botao" owner="ResourceBDD">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:03.271184" level="INFO">Clicking element 'xpath=./html/body/section/div/div/div[3]/div/form/button'.</msg>
+<arg>${BOTAO_SIGNUP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:03.271096" elapsed="1.912161"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:07.184735" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:05.183357" elapsed="2.001452"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:03.271011" elapsed="3.913858"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:03.270908" elapsed="3.913988"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:03.270783" elapsed="3.914130"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:03.270635" elapsed="3.914300"/>
+</kw>
+<kw name="Então sera Exibida a Tela de Cadastro com titulo &quot;ENTER ACCOUNT INFORMATION&quot;" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="sera Exibida a Tela de Cadastro com titulo &quot;ENTER ACCOUNT INFORMATION&quot;" owner="ResourceBDD" source_name="sera Exibida a Tela de Cadastro com titulo &quot;${TITULO}&quot;">
+<kw name="validar titulo &quot;${TITULO}&quot;" owner="ResourceBDD" source_name="validar titulo &quot;${TITULO}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_PAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.185671" elapsed="0.012552"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.198486" level="INFO">Verifying element 'xpath=./html/body/section/div/div/div/div[1]/h2/b' contains exact text 'ENTER ACCOUNT INFORMATION'.</msg>
+<arg>${TITULO_PAGE}</arg>
+<arg>${TITULO}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.198345" elapsed="0.009185"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.185550" elapsed="0.022036"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.185358" elapsed="0.022254"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.185216" elapsed="0.022415"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.185072" elapsed="0.022578"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:09:51.072960" elapsed="16.134819"/>
+</test>
+<test id="s1-t2" name="Cenário 02: Validar Data de Aniversario" line="14">
+<kw name="Dado que esteja preenchendo os campos de &quot;Date of Birth&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que esteja preenchendo os campos de &quot;Date of Birth&quot;" owner="ResourceBDD" source_name="que esteja preenchendo os campos de &quot;${DATEOFBIRTH}&quot;">
+<kw name="validar date of birt ${DATEOFBIRTH}" owner="ResourceBDD" source_name="validar date of birt ${DATEOFBIRTH}">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.208912" level="INFO">Verifying element 'xpath=./html/body/section/div/div/div/div[1]/form/div[5]/label' contains exact text 'Date of Birth'.</msg>
+<arg>${TITULODATE}</arg>
+<arg>${DATEOFBIRTH}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.208775" elapsed="0.009178"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.208688" elapsed="0.009320"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.208594" elapsed="0.009439"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.208468" elapsed="0.009583"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.208258" elapsed="0.009816"/>
+</kw>
+<kw name="Quando preencher os campos Day, Month e Year" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher os campos Day, Month e Year" owner="ResourceBDD">
+<kw name="preencher os campos de data" owner="ResourceBDD">
+<kw name="Day Of Month" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:07.218779" level="INFO">${DATAFAKE} = 21</msg>
+<var>${DATAFAKE}</var>
+<status status="PASS" start="2024-07-27T02:10:07.218616" elapsed="0.000176"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>This is a day: ${DATAFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.218834" elapsed="0.000079"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.219065" level="INFO">Selecting options from selection list 'name=days' by value 21.</msg>
+<arg>${DAYS}</arg>
+<arg>${DATAFAKE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.218965" elapsed="0.050205"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-27T02:10:07.269564" level="INFO">${ran int month} = 10</msg>
+<var>${ran int month}</var>
+<arg>random.randint(0, 12)</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.269296" elapsed="0.000286"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>This is a month: ${ran int month}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.269764" elapsed="0.000120"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.270074" level="INFO">Selecting options from selection list 'name=months' by value 10.</msg>
+<arg>${MONTH}</arg>
+<arg>${ran int month}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.269958" elapsed="0.033447"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-27T02:10:07.303697" level="INFO">${ran int year} = 1965</msg>
+<var>${ran int year}</var>
+<arg>random.randint(1900, 2021)</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.303536" elapsed="0.000175"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2024-07-27T02:10:07.303859" level="INFO">${ran int year} = 1965</msg>
+<var>${ran int year}</var>
+<arg>${ran int year}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.303769" elapsed="0.000101"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>This is a year: ${ran int year}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.303911" elapsed="0.000062"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.304110" level="INFO">Selecting options from selection list 'name=years' by value 1965.</msg>
+<arg>${YEARS}</arg>
+<arg>${ran int year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.304021" elapsed="0.038663"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.218531" elapsed="0.124227"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.218443" elapsed="0.124376"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.218330" elapsed="0.124532"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.218199" elapsed="0.124701"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.207937" elapsed="0.135071"/>
+</test>
+<test id="s1-t3" name="Cenário 03: Validar Password" line="19">
+<kw name="Dado que esteja preenchendo o campo &quot;Password *&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que esteja preenchendo o campo &quot;Password *&quot;" owner="ResourceBDD" source_name="que esteja preenchendo o campo &quot;${PASSWORD}&quot;">
+<kw name="validar campo password ${PASSWORD}" owner="ResourceBDD" source_name="validar campo password ${PASSWORD}">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.344079" level="INFO">Verifying element 'xpath=./html/body/section/div/div/div/div[1]/form/div[4]/label' contains exact text 'Password *'.</msg>
+<arg>${TITULOPASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.343985" elapsed="0.011569"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.343878" elapsed="0.011748"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.343745" elapsed="0.011907"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.343600" elapsed="0.012073"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.343436" elapsed="0.012262"/>
+</kw>
+<kw name="Quando preencher o campo password com dados alfanumericos" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo password com dados alfanumericos" owner="ResourceBDD">
+<kw name="preencher password" owner="ResourceBDD">
+<kw name="Password" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:07.356481" level="INFO">${PASSWORDFAKE} = *o1Pnez2kV</msg>
+<var>${PASSWORDFAKE}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.356355" elapsed="0.000139"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:07.356634" level="INFO">Clicking element 'name=password'.</msg>
+<arg>${INPUTPASSWORD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.356547" elapsed="0.027326"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:09.384948" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.384021" elapsed="2.000987"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:09.385244" level="INFO">Typing text '*o1Pnez2kV' into text field 'name=password'.</msg>
+<arg>${INPUTPASSWORD}</arg>
+<arg>${PASSWORDFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:09.385114" elapsed="0.027586"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a password: ${PASSWORDFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:09.412815" elapsed="0.000140"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:11.415006" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:09.413075" elapsed="2.001990"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.356268" elapsed="4.058855"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.356186" elapsed="4.058961"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:07.356054" elapsed="4.059110"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.355887" elapsed="4.059295"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:07.343232" elapsed="4.072034"/>
+</test>
+<test id="s1-t4" name="Cenário 04: Validar Address Information" line="24">
+<kw name="Dado que esteja preenchendo os campos de address information &quot;ADDRESS INFORMATION&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que esteja preenchendo os campos de address information &quot;ADDRESS INFORMATION&quot;" owner="ResourceBDD" source_name="que esteja preenchendo os campos de address information &quot;${ADDRESS}&quot;">
+<kw name="validar campo address ${ADDRESS}" owner="ResourceBDD" source_name="validar campo address ${ADDRESS}">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=./html/body/section/div/div/div/div[1]/form/p[6]/label</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-07-27T02:10:11.415993" elapsed="0.273127"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:11.689358" level="INFO">Verifying element 'xpath=./html/body/section/div/div/div/div[1]/form/h2/b' contains exact text 'ADDRESS INFORMATION'.</msg>
+<arg>${TITULOADDRESS}</arg>
+<arg>${ADDRESS}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-27T02:10:11.689234" elapsed="0.008174"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.415906" elapsed="0.281559"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.415812" elapsed="0.281679"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:11.415688" elapsed="0.281820"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.415568" elapsed="0.281961"/>
+</kw>
+<kw name="Quando preencher o campo First name" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo First name" owner="ResourceBDD">
+<kw name="preencher first name" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:13.698895" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:11.698053" elapsed="2.000903"/>
+</kw>
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:13.699144" level="INFO">${FIRSTNAMEFAKE} = Maria Liz</msg>
+<var>${FIRSTNAMEFAKE}</var>
+<status status="PASS" start="2024-07-27T02:10:13.699050" elapsed="0.000104"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:13.699293" level="INFO">Clicking element 'xpath=./html/body/section/div/div/div/div[1]/form/p[1]/input'.</msg>
+<arg>${INPUT_FIRST_NAME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:13.699208" elapsed="0.023179"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:15.724237" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:13.722533" elapsed="2.001767"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:15.724547" level="INFO">Typing text 'Maria Liz' into text field 'xpath=./html/body/section/div/div/div/div[1]/form/p[1]/input'.</msg>
+<arg>${INPUT_FIRST_NAME}</arg>
+<arg>${FIRSTNAMEFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:15.724413" elapsed="0.028409"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a first name: ${FIRSTNAMEFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:15.752932" elapsed="0.000117"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.697983" elapsed="4.055098"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.697889" elapsed="4.055211"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:11.697774" elapsed="4.055340"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.697645" elapsed="4.055488"/>
+</kw>
+<kw name="E preencher o campo Last name" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo Last name" owner="ResourceBDD">
+<kw name="preencher last name" owner="ResourceBDD">
+<kw name="Last Name" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:15.753774" level="INFO">${LASTNAMEFAKE} = Moraes</msg>
+<var>${LASTNAMEFAKE}</var>
+<status status="PASS" start="2024-07-27T02:10:15.753704" elapsed="0.000082"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:15.753909" level="INFO">Clicking element 'name=last_name'.</msg>
+<arg>${INPUT_LAST_NAME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:15.753835" elapsed="0.026861"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:17.782847" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:15.780863" elapsed="2.002049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:17.783148" level="INFO">Typing text 'Moraes' into text field 'name=last_name'.</msg>
+<arg>${INPUT_LAST_NAME}</arg>
+<arg>${LASTNAMEFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:17.783019" elapsed="0.026550"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a last name: ${LASTNAMEFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:17.809679" elapsed="0.000114"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:15.753626" elapsed="2.056203"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:15.753431" elapsed="2.056423"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:15.753322" elapsed="2.056552"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:15.753214" elapsed="2.056682"/>
+</kw>
+<kw name="E preencher o campo Company" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo Company" owner="ResourceBDD">
+<kw name="preencher company" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:19.812533" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:17.810367" elapsed="2.002228"/>
+</kw>
+<kw name="Job" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:19.812900" level="INFO">${COMPANYFAKE} = Jóquei</msg>
+<var>${COMPANYFAKE}</var>
+<status status="PASS" start="2024-07-27T02:10:19.812728" elapsed="0.000189"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:19.813084" level="INFO">Clicking element 'name=company'.</msg>
+<arg>${INPUT_COMPANY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:19.812991" elapsed="0.021442"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:21.835009" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:19.834598" elapsed="2.000476"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:21.835301" level="INFO">Typing text 'Jóquei' into text field 'name=company'.</msg>
+<arg>${INPUT_COMPANY}</arg>
+<arg>${COMPANYFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:21.835176" elapsed="0.024361"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a company name: ${COMPANYFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:21.859641" elapsed="0.000117"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:17.810294" elapsed="4.049499"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:17.810201" elapsed="4.049615"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:17.810093" elapsed="4.049739"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:17.809980" elapsed="4.049871"/>
+</kw>
+<kw name="E preencher o campo Address" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo Address" owner="ResourceBDD">
+<kw name="preencher address" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:23.861554" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:21.860317" elapsed="2.001302"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=./html/body/section/div/div/div/div[1]/form/p[10]/label</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-07-27T02:10:23.861724" elapsed="0.268203"/>
+</kw>
+<kw name="Address" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:24.130219" level="INFO">${ADDRESSFAKE} = Conjunto João Guilherme Machado, 70
+Barão Homem De Melo 3ª Seção
+81287099 Aparecida / PB</msg>
+<var>${ADDRESSFAKE}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<status status="PASS" start="2024-07-27T02:10:24.130052" elapsed="0.000181"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:24.130386" level="INFO">Clicking element 'name=address1'.</msg>
+<arg>${INPUT_ADDRESS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:24.130295" elapsed="0.021742"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:26.154460" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:24.152148" elapsed="2.002382"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:26.154804" level="INFO">Typing text 'Conjunto João Guilherme Machado, 70
+Barão Homem De Melo 3ª Seção
+81287099 Aparecida / PB' into text field 'name=address1'.</msg>
+<arg>${INPUT_ADDRESS}</arg>
+<arg>${ADDRESSFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:26.154645" elapsed="0.051944"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a address name: ${ADDRESSFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:26.206703" elapsed="0.000148"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:21.860250" elapsed="4.346647"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:21.860152" elapsed="4.346771"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:21.860043" elapsed="4.346897"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:21.859938" elapsed="4.347023"/>
+</kw>
+<kw name="E preencher o campo State" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo State" owner="ResourceBDD">
+<kw name="preencher state" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:28.208526" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:26.208146" elapsed="2.000452"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=./html/body/section/div/div/div/div[1]/form/button</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-07-27T02:10:28.208717" elapsed="0.272468"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:28.481415" level="INFO">Clicking element 'name=state'.</msg>
+<arg>${INPUT_STATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:28.481299" elapsed="0.020672"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:30.502292" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:28.502084" elapsed="2.000271"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:30.502595" level="INFO">Typing text 'SP' into text field 'name=state'.</msg>
+<arg>${INPUT_STATE}</arg>
+<arg>${STATEFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:30.502463" elapsed="0.034672"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a state name: ${STATEFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:30.537246" elapsed="0.000122"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:26.208048" elapsed="4.329355"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:26.207877" elapsed="4.329546"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:26.207512" elapsed="4.329926"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:26.207125" elapsed="4.330334"/>
+</kw>
+<kw name="E preencher o campo City" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo City" owner="ResourceBDD">
+<kw name="preencher city" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:32.540375" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:30.537932" elapsed="2.002508"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:32.540678" level="INFO">Clicking element 'name=city'.</msg>
+<arg>${INPUT_CITY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:32.540557" elapsed="0.023085"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:34.564166" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:32.563750" elapsed="2.000474"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:34.564460" level="INFO">Typing text 'São Paulo' into text field 'name=city'.</msg>
+<arg>${INPUT_CITY}</arg>
+<arg>${CITYFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:34.564330" elapsed="0.034660"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a city name: ${CITYFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:34.599103" elapsed="0.000118"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:30.537847" elapsed="4.062159"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:30.537765" elapsed="4.062284"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:30.537656" elapsed="4.062416"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:30.537545" elapsed="4.062576"/>
+</kw>
+<kw name="E preencher o campo Zipcode" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo Zipcode" owner="ResourceBDD">
+<kw name="preencher zipcode" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:36.601689" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:34.600787" elapsed="2.000962"/>
+</kw>
+<kw name="Postcode" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:36.601977" level="INFO">${ZIPCODEFAKE} = 61770426</msg>
+<var>${ZIPCODEFAKE}</var>
+<doc>Randomly returns a postcode.
+:param formatted: True to allow formatted postcodes, else False (default True)
+:example formatted: '41224-212' '83992-291' '12324322'
+:example raw: '43920231' '34239530'</doc>
+<status status="PASS" start="2024-07-27T02:10:36.601849" elapsed="0.000141"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:36.602143" level="INFO">Clicking element 'name=zipcode'.</msg>
+<arg>${INPUT_ZIPCODE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:36.602054" elapsed="0.020553"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:38.624251" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:36.622721" elapsed="2.001632"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:38.624590" level="INFO">Typing text '61770426' into text field 'name=zipcode'.</msg>
+<arg>${INPUT_ZIPCODE}</arg>
+<arg>${ZIPCODEFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:38.624464" elapsed="0.025894"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a zipcode name: ${ZIPCODEFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:38.650487" elapsed="0.000106"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:38.650917" level="INFO">Sending key(s) ('TAB',) to name=zipcode element.</msg>
+<msg time="2024-07-27T02:10:38.917315" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2024-07-27T02:10:38.917360" level="INFO">Releasing special key TAB.</msg>
+<arg>${INPUT_ZIPCODE}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-07-27T02:10:38.650648" elapsed="0.271217"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:34.600696" elapsed="4.321234"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:34.600493" elapsed="4.321461"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:34.600367" elapsed="4.321607"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:34.600234" elapsed="4.321764"/>
+</kw>
+<kw name="E preencher o campo Mobile Number" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="preencher o campo Mobile Number" owner="ResourceBDD">
+<kw name="preencher mobile number" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:40.924868" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:38.922558" elapsed="2.002391"/>
+</kw>
+<kw name="Phone Number" owner="FakerLibrary">
+<msg time="2024-07-27T02:10:40.925400" level="INFO">${MOBILENUMBERFAKE} = +55 (041) 3653-1884</msg>
+<var>${MOBILENUMBERFAKE}</var>
+<status status="PASS" start="2024-07-27T02:10:40.925059" elapsed="0.000356"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:40.925583" level="INFO">Clicking element 'name=mobile_number'.</msg>
+<arg>${INPUT_MOBILENUMBER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:40.925487" elapsed="0.022171"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:42.948366" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:40.947764" elapsed="2.000665"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:42.948668" level="INFO">Typing text '+55 (041) 3653-1884' into text field 'name=mobile_number'.</msg>
+<arg>${INPUT_MOBILENUMBER}</arg>
+<arg>${MOBILENUMBERFAKE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:42.948542" elapsed="0.026782"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>his is a mobile number name: ${MOBILENUMBERFAKE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-27T02:10:42.975465" elapsed="0.000135"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:38.922489" elapsed="4.053153"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:38.922397" elapsed="4.053272"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:38.922283" elapsed="4.053403"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:38.922135" elapsed="4.053576"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:11.415381" elapsed="31.560483"/>
+</test>
+<test id="s1-t5" name="Cenário 05: Validar Cadastro com Sucesso" line="36">
+<kw name="Dado que todos os campos estejam preenchidos" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que todos os campos estejam preenchidos" owner="ResourceBDD">
+<kw name="validar campos" owner="ResourceBDD">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:44.977249" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:42.976656" elapsed="2.000659"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:42.976589" elapsed="2.000779"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:42.976508" elapsed="2.000884"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:42.976382" elapsed="2.001025"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:42.976255" elapsed="2.001170"/>
+</kw>
+<kw name="Quando clicar no botão Create Account" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="clicar no botão Create Account" owner="ResourceBDD">
+<kw name="cadastrar conta" owner="ResourceBDD">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:44.978107" level="INFO">Clicking element 'xpath=.//button[contains(@data-qa,'create-account')]'.</msg>
+<arg>${BOTAO_CREATE_ACOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-27T02:10:44.978019" elapsed="2.321643"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:10:55.301043" level="INFO">Slept 8 seconds.</msg>
+<arg>8s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:47.299761" elapsed="8.001343"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:44.977941" elapsed="10.323218"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:44.977854" elapsed="10.323332"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:44.977726" elapsed="10.323475"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:44.977582" elapsed="10.323878"/>
+</kw>
+<kw name="Então o cadastro sera realizado com sucesso e sera exibida a mensagem &quot;ACCOUNT CREATED!&quot;" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o cadastro sera realizado com sucesso e sera exibida a mensagem &quot;ACCOUNT CREATED!&quot;" owner="ResourceBDD" source_name="o cadastro sera realizado com sucesso e sera exibida a mensagem &quot;${MSGSUCESSO}&quot;">
+<kw name="validar cadastro com sucesso ${MSGSUCESSO}" owner="ResourceBDD" source_name="validar cadastro com sucesso ${MSGSUCESSO}">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-27T02:10:55.302157" level="INFO">Verifying element 'xpath=./html/body/section/div/div/div/h2/b' contains exact text 'ACCOUNT CREATED!'.</msg>
+<arg>${MSGCADASTRO}</arg>
+<arg>${MSGSUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-27T02:10:55.302057" elapsed="0.010739"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-27T02:11:03.315491" level="INFO">Slept 8 seconds.</msg>
+<arg>8s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-27T02:10:55.312924" elapsed="8.002624"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:55.301962" elapsed="8.013643"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:55.301863" elapsed="8.013766"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-27T02:10:55.301746" elapsed="8.013901"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:55.301602" elapsed="8.014066"/>
+</kw>
+<status status="PASS" start="2024-07-27T02:10:42.976029" elapsed="20.339721"/>
+</test>
+<status status="PASS" start="2024-07-27T02:09:50.896863" elapsed="72.419103"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="TestesBDDWeb">TestesBDDWeb</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
