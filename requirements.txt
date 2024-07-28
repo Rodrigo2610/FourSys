@@ -11,3 +11,6 @@ robotframework-requests==0.9.7
 robotframework-seleniumlibrary==6.3.0
 selenium==4.23.1
 setuptools==71.1.0
+jsonpath-ng==1.6.1
+jsonschema==4.23.0
+jsonschema-specifications==2023.12.1

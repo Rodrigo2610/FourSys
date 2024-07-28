@@ -1,387 +1,942 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-27T02:06:56.528870" rpa="false" schemaversion="5">
-<suite id="s1" name="TestesBDDApi" source="/Users/rodrigobalbino/Documents/testesrobotframework-master/Demos/TestesApi/testes/TestesBDDApi.robot">
-<test id="s1-t1" name="Cenario: POST - Create" line="17">
-<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-28T14:46:15.512377" rpa="false" schemaversion="5">
+<suite id="s1" name="TestesBDDApi" source="/Users/rodrigobalbino/Documents/GitHub/FourSys/TestesApi/testes/TestesBDDApi.robot">
+<test id="s1-t1" name="Cenario: POST - Create" line="6">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que crie a sessao para &quot;https://reqres.in&quot;" owner="ResourceBDD" source_name="que crie a sessao para &quot;${url}&quot;">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:56.736699" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-28T14:46:15.658668" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>users</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-27T02:06:56.736594" elapsed="0.000177"/>
+<status status="PASS" start="2024-07-28T14:46:15.658617" elapsed="0.000125"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:56.736216" elapsed="0.000588"/>
+<status status="PASS" start="2024-07-28T14:46:15.658538" elapsed="0.000235"/>
 </kw>
-<kw name="Quando realizar um POST para o endpoint &quot;api/users&quot; com nome &quot;George&quot; e job &quot;QA&quot;" owner="ResourceBDD" source_name="Quando realizar um POST para o endpoint &quot;${uri}&quot; com nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:15.658395" elapsed="0.000392"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:15.658037" elapsed="0.000765"/>
+</kw>
+<kw name="Quando realizar um POST para o endpoint &quot;api/users&quot; com nome &quot;George&quot; e job &quot;QA&quot;" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="realizar um POST para o endpoint &quot;api/users&quot; com nome &quot;George&quot; e job &quot;QA&quot;" owner="ResourceBDD" source_name="realizar um POST para o endpoint &quot;${uri}&quot; com nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-07-27T02:06:56.737107" level="INFO">${body} = {'name': 'George', 'job': 'QA'}</msg>
+<msg time="2024-07-28T14:46:15.659194" level="INFO">${body} = {'name': 'George', 'job': 'QA'}</msg>
 <var>${body}</var>
 <arg>name=${NAME}</arg>
 <arg>job=${JOB}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-07-27T02:06:56.737005" elapsed="0.000111"/>
+<status status="PASS" start="2024-07-28T14:46:15.659117" elapsed="0.000085"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.206727" level="INFO">POST Request : url=https://reqres.in/api/users 
+<msg time="2024-07-28T14:46:16.262099" level="INFO">POST Request : url=https://reqres.in/api/users 
  path_url=/api/users 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '31'} 
  body=b'{"name": "George", "job": "QA"}' 
  </msg>
-<msg time="2024-07-27T02:06:57.206850" level="INFO">POST Response : url=https://reqres.in/api/users 
+<msg time="2024-07-28T14:46:16.262409" level="INFO">POST Response : url=https://reqres.in/api/users 
  status=201, reason=Created 
- headers={'Date': 'Sat, 27 Jul 2024 05:06:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '78', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056801&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=I4S9yYCq8UHLPDW4NmE4lYCJSY21y0M8txdSHowwfIo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056801&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=I4S9yYCq8UHLPDW4NmE4lYCJSY21y0M8txdSHowwfIo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4e-6d4ZMx05Ym9FN+3MBefaPzeT7M4"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0139f80112-GRU'} 
- body={"name":"George","job":"QA","id":"654","createdAt":"2024-07-27T05:06:41.785Z"} 
+ headers={'Date': 'Sun, 28 Jul 2024 17:46:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '77', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722188760&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Mam0IRhBBwybbFKPpPRW8qtP6x7h%2BVK5q6yFn8DvsE0%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722188760&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Mam0IRhBBwybbFKPpPRW8qtP6x7h%2BVK5q6yFn8DvsE0%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4d-aD7IjQ1W0Ul+Gb4P0Djmryn1hlg"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8aa6afa6491f0316-GRU'} 
+ body={"name":"George","job":"QA","id":"80","createdAt":"2024-07-28T17:46:00.386Z"} 
  </msg>
-<msg time="2024-07-27T02:06:57.206927" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-28T14:46:16.262603" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-27T02:06:57.207067" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-07-28T14:46:16.262990" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>users</arg>
 <arg>${uri}</arg>
 <arg>json=${body}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-27T02:06:56.737157" elapsed="0.469932"/>
+<status status="PASS" start="2024-07-28T14:46:15.659237" elapsed="0.603816"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.207474" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-07-28T14:46:16.264353" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <arg>${response}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.207278" elapsed="0.000231"/>
+<status status="PASS" start="2024-07-28T14:46:16.263705" elapsed="0.000740"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.208124" level="INFO">${payload} = {'name': 'George', 'job': 'QA', 'id': '654', 'createdAt': '2024-07-27T05:06:41.785Z'}</msg>
+<msg time="2024-07-28T14:46:16.266317" level="INFO">${payload} = {'name': 'George', 'job': 'QA', 'id': '80', 'createdAt': '2024-07-28T17:46:00.386Z'}</msg>
 <var>${payload}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.207618" elapsed="0.000525"/>
+<status status="PASS" start="2024-07-28T14:46:16.264745" elapsed="0.001625"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.208562" level="INFO">${IdUser} = 654</msg>
+<msg time="2024-07-28T14:46:16.267800" level="INFO">${IdUser} = 80</msg>
 <var>${IdUser}</var>
 <arg>${payload['id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.208231" elapsed="0.000347"/>
+<status status="PASS" start="2024-07-28T14:46:16.266659" elapsed="0.001190"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${payload['name']}</arg>
 <arg>${NAME}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.208662" elapsed="0.000312"/>
+<status status="PASS" start="2024-07-28T14:46:16.268119" elapsed="0.001093"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${payload['job']}</arg>
 <arg>${JOB}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.209054" elapsed="0.000288"/>
+<status status="PASS" start="2024-07-28T14:46:16.269453" elapsed="0.000483"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${payload['id']}</arg>
 <arg>${IdUser}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.209419" elapsed="0.000281"/>
+<status status="PASS" start="2024-07-28T14:46:16.270046" elapsed="0.000387"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.json()}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.209781" elapsed="0.000314"/>
+<status status="PASS" start="2024-07-28T14:46:16.270538" elapsed="0.000388"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${IdUser}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.210174" elapsed="0.000091"/>
+<status status="PASS" start="2024-07-28T14:46:16.271011" elapsed="0.000103"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:56.736897" elapsed="0.473422"/>
+<status status="PASS" start="2024-07-28T14:46:15.659043" elapsed="0.612129"/>
 </kw>
-<kw name="Então status code da resposta sera 201" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:15.658952" elapsed="0.612253"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:15.658868" elapsed="0.612372"/>
+</kw>
+<kw name="Então status code da resposta sera 201" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="status code da resposta sera 201" owner="ResourceBDD" source_name="status code da resposta sera ${status_code}">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.211149" level="INFO">Argument types are:
+<msg time="2024-07-28T14:46:16.272371" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${status_code}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.210696" elapsed="0.000503"/>
+<status status="PASS" start="2024-07-28T14:46:16.272039" elapsed="0.000387"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.210500" elapsed="0.000742"/>
+<status status="PASS" start="2024-07-28T14:46:16.271865" elapsed="0.000602"/>
 </kw>
-<kw name="E sera retornado no response a chave &quot;id&quot;" owner="ResourceBDD" source_name="E sera retornado no response a chave &quot;${Key}&quot;">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.271648" elapsed="0.000842"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.271431" elapsed="0.001086"/>
+</kw>
+<kw name="E o schema sera validado" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o schema sera validado" owner="ResourceBDD">
+<kw name="Get Binary File" owner="OperatingSystem">
+<msg time="2024-07-28T14:46:16.273443" level="INFO" html="true">Getting file '&lt;a href="file:///Users/rodrigobalbino/Documents/GitHub/FourSys/TestesApi/resources/Schema.json"&gt;/Users/rodrigobalbino/Documents/GitHub/FourSys/TestesApi/resources/Schema.json&lt;/a&gt;'.</msg>
+<msg time="2024-07-28T14:46:16.273572" level="INFO">${schema} = {
+    "name": "",
+    "job": "",
+    "id": "",
+    "createdAt": ""
+}
+</msg>
+<var>${schema}</var>
+<arg>../resources/Schema.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.273276" elapsed="0.000313"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.273873" level="INFO">${schema} = {'name': '', 'job': '', 'id': '', 'createdAt': ''}</msg>
+<var>${schema}</var>
+<arg>json.loads('''${schema}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.273673" elapsed="0.000216"/>
+</kw>
+<kw name="Validate" owner="jsonschema">
+<arg>${payload}</arg>
+<arg>schema=${schema}</arg>
+<doc>Validate an instance under the given schema.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.273976" elapsed="0.000624"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.273122" elapsed="0.001525"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.272938" elapsed="0.001738"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.272631" elapsed="0.002075"/>
+</kw>
+<kw name="E o tipo do campo sera validado" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o tipo do campo sera validado" owner="ResourceBDD">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.275584" elapsed="0.000098"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.276581" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.276361" elapsed="0.000244"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.276702" elapsed="0.000122"/>
+</kw>
+<var name="${item}">name</var>
+<status status="PASS" start="2024-07-28T14:46:16.276248" elapsed="0.000604"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.277113" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.276988" elapsed="0.000139"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.277202" elapsed="0.000094"/>
+</kw>
+<var name="${item}">job</var>
+<status status="PASS" start="2024-07-28T14:46:16.276921" elapsed="0.000396"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.277530" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.277427" elapsed="0.000115"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.277604" elapsed="0.000088"/>
+</kw>
+<var name="${item}">id</var>
+<status status="PASS" start="2024-07-28T14:46:16.277374" elapsed="0.000338"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.277918" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.277813" elapsed="0.000116"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.277988" elapsed="0.000093"/>
+</kw>
+<var name="${item}">createdAt</var>
+<status status="PASS" start="2024-07-28T14:46:16.277762" elapsed="0.000338"/>
+</iter>
+<var>${item}</var>
+<value>@{response.json()}</value>
+<status status="PASS" start="2024-07-28T14:46:16.275745" elapsed="0.002371"/>
+</for>
+<status status="PASS" start="2024-07-28T14:46:16.275425" elapsed="0.002731"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.275005" elapsed="0.003174"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.274829" elapsed="0.003376"/>
+</kw>
+<kw name="E sera retornado no response a chave &quot;id&quot;" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="sera retornado no response a chave &quot;id&quot;" owner="ResourceBDD" source_name="sera retornado no response a chave &quot;${Key}&quot;">
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.json()}</arg>
 <arg>${Key}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.211535" elapsed="0.000285"/>
+<status status="PASS" start="2024-07-28T14:46:16.278799" elapsed="0.000323"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.211367" elapsed="0.000493"/>
+<status status="PASS" start="2024-07-28T14:46:16.278654" elapsed="0.000505"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:56.736031" elapsed="0.475929"/>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.278487" elapsed="0.000691"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.278318" elapsed="0.000884"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:15.657828" elapsed="0.621469"/>
 </test>
-<test id="s1-t2" name="Cenario: GET - Single User" line="23">
-<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<test id="s1-t2" name="Cenario: GET - Single User" line="14">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que crie a sessao para &quot;https://reqres.in&quot;" owner="ResourceBDD" source_name="que crie a sessao para &quot;${url}&quot;">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.212680" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-28T14:46:16.280196" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>users</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-27T02:06:57.212583" elapsed="0.000230"/>
+<status status="PASS" start="2024-07-28T14:46:16.280119" elapsed="0.000180"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.212401" elapsed="0.000695"/>
+<status status="PASS" start="2024-07-28T14:46:16.279991" elapsed="0.000343"/>
 </kw>
-<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot;" owner="ResourceBDD" source_name="Quando realizar um GET para o endpoint &quot;${uri}&quot;">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.279815" elapsed="0.000537"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.279663" elapsed="0.000712"/>
+</kw>
+<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot;" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="realizar um GET para o endpoint &quot;/api/users/&quot;" owner="ResourceBDD" source_name="realizar um GET para o endpoint &quot;${uri}&quot;">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.260974" level="INFO">GET Request : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:16.326423" level="INFO">GET Request : url=https://reqres.in/api/users/ 
  path_url=/api/users/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
  body=None 
  </msg>
-<msg time="2024-07-27T02:06:57.261065" level="INFO">GET Response : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:16.326499" level="INFO">GET Response : url=https://reqres.in/api/users/ 
  status=200, reason=OK 
- headers={'Date': 'Sat, 27 Jul 2024 05:06:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6151', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0409cdaede-GRU', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Sun, 28 Jul 2024 17:46:00 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3306', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8aa6afa9eb4faf4a-GRU', 'Content-Encoding': 'gzip'} 
  body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
  </msg>
-<msg time="2024-07-27T02:06:57.261140" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-28T14:46:16.326643" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-27T02:06:57.261253" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:16.326734" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>users</arg>
 <arg>${uri}</arg>
 <arg>${IdUser}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.213388" elapsed="0.047883"/>
+<status status="PASS" start="2024-07-28T14:46:16.280889" elapsed="0.045862"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.261597" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:16.327044" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <arg>${response}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.261437" elapsed="0.000187"/>
+<status status="PASS" start="2024-07-28T14:46:16.326894" elapsed="0.000175"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.213224" elapsed="0.048445"/>
+<status status="PASS" start="2024-07-28T14:46:16.280750" elapsed="0.046360"/>
 </kw>
-<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.280606" elapsed="0.046529"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.280466" elapsed="0.046697"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="status code da resposta sera 200" owner="ResourceBDD" source_name="status code da resposta sera ${status_code}">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.262450" level="INFO">Argument types are:
+<msg time="2024-07-28T14:46:16.328204" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${status_code}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.262054" elapsed="0.000442"/>
+<status status="PASS" start="2024-07-28T14:46:16.327851" elapsed="0.000397"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.261840" elapsed="0.000700"/>
+<status status="PASS" start="2024-07-28T14:46:16.327684" elapsed="0.000606"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.212129" elapsed="0.050503"/>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.327490" elapsed="0.000823"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.327293" elapsed="0.001047"/>
+</kw>
+<kw name="E o tipo do campo sera validado" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o tipo do campo sera validado" owner="ResourceBDD">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.328953" elapsed="0.000087"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.329626" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.329490" elapsed="0.000152"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.329718" elapsed="0.000116"/>
+</kw>
+<var name="${item}">page</var>
+<status status="PASS" start="2024-07-28T14:46:16.329419" elapsed="0.000442"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.330100" level="INFO">${res} = False</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.329982" elapsed="0.000133"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.330189" elapsed="0.000098"/>
+</kw>
+<var name="${item}">per_page</var>
+<status status="PASS" start="2024-07-28T14:46:16.329922" elapsed="0.000386"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.330538" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.330424" elapsed="0.000129"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.330621" elapsed="0.000101"/>
+</kw>
+<var name="${item}">total</var>
+<status status="PASS" start="2024-07-28T14:46:16.330365" elapsed="0.000380"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.330970" level="INFO">${res} = False</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.330859" elapsed="0.000124"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.331050" elapsed="0.000104"/>
+</kw>
+<var name="${item}">total_pages</var>
+<status status="PASS" start="2024-07-28T14:46:16.330802" elapsed="0.000375"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.331397" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.331287" elapsed="0.000124"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.331479" elapsed="0.000100"/>
+</kw>
+<var name="${item}">data</var>
+<status status="PASS" start="2024-07-28T14:46:16.331230" elapsed="0.000410"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.331836" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.331740" elapsed="0.000107"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.331904" elapsed="0.000085"/>
+</kw>
+<var name="${item}">support</var>
+<status status="PASS" start="2024-07-28T14:46:16.331690" elapsed="0.000319"/>
+</iter>
+<var>${item}</var>
+<value>@{response.json()}</value>
+<status status="PASS" start="2024-07-28T14:46:16.329088" elapsed="0.002937"/>
+</for>
+<status status="PASS" start="2024-07-28T14:46:16.328805" elapsed="0.003252"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.328608" elapsed="0.003467"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.328444" elapsed="0.003656"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.279454" elapsed="0.052730"/>
 </test>
-<test id="s1-t3" name="Cenario: PUT - Update" line="28">
-<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<test id="s1-t3" name="Cenario: PUT - Update" line="20">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que crie a sessao para &quot;https://reqres.in&quot;" owner="ResourceBDD" source_name="que crie a sessao para &quot;${url}&quot;">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.263246" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-28T14:46:16.333027" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>users</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-27T02:06:57.263169" elapsed="0.000169"/>
+<status status="PASS" start="2024-07-28T14:46:16.332951" elapsed="0.000170"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.263009" elapsed="0.000366"/>
+<status status="PASS" start="2024-07-28T14:46:16.332820" elapsed="0.000334"/>
 </kw>
-<kw name="Quando realizar um PUT para o endpoint &quot;/api/users/&quot; alterando os dados nome &quot;George1&quot; e job &quot;QA1&quot;" owner="ResourceBDD" source_name="Quando realizar um PUT para o endpoint &quot;${uri}&quot; alterando os dados nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.332649" elapsed="0.000525"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.332499" elapsed="0.000701"/>
+</kw>
+<kw name="Quando realizar um PUT para o endpoint &quot;/api/users/&quot; alterando os dados nome &quot;George1&quot; e job &quot;QA1&quot;" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="realizar um PUT para o endpoint &quot;/api/users/&quot; alterando os dados nome &quot;George1&quot; e job &quot;QA1&quot;" owner="ResourceBDD" source_name="realizar um PUT para o endpoint &quot;${uri}&quot; alterando os dados nome &quot;${NAME}&quot; e job &quot;${JOB}&quot;">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.263835" level="INFO">${body} = {'name': 'George1', 'job': 'QA1'}</msg>
+<msg time="2024-07-28T14:46:16.334040" level="INFO">${body} = {'name': 'George1', 'job': 'QA1'}</msg>
 <var>${body}</var>
 <arg>name=${NAME}</arg>
 <arg>job=${JOB}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.263671" elapsed="0.000178"/>
+<status status="PASS" start="2024-07-28T14:46:16.333888" elapsed="0.000166"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.727360" level="INFO">PUT Request : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:16.890232" level="INFO">PUT Request : url=https://reqres.in/api/users/ 
  path_url=/api/users/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '33'} 
  body=b'{"name": "George1", "job": "QA1"}' 
  </msg>
-<msg time="2024-07-27T02:06:57.727610" level="INFO">PUT Response : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:16.890526" level="INFO">PUT Response : url=https://reqres.in/api/users/ 
  status=200, reason=OK 
- headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"45-ocwq7oS97FMUi+zvubtdnRBSYTE"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a045ceb0188-GRU', 'Content-Encoding': 'gzip'} 
- body={"name":"George1","job":"QA1","updatedAt":"2024-07-27T05:06:42.305Z"} 
+ headers={'Date': 'Sun, 28 Jul 2024 17:46:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722188761&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4ISMHOwOz95zqp%2B5lW5XuNel5v6Bybtmm4HB9wHWiG4%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722188761&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4ISMHOwOz95zqp%2B5lW5XuNel5v6Bybtmm4HB9wHWiG4%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"45-hJX4J1kd1GmfFg+/0aINsKQ5jO4"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8aa6afaa4f8c1aa7-GRU', 'Content-Encoding': 'gzip'} 
+ body={"name":"George1","job":"QA1","updatedAt":"2024-07-28T17:46:01.013Z"} 
  </msg>
-<msg time="2024-07-27T02:06:57.727842" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-28T14:46:16.890665" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-27T02:06:57.728043" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:16.890924" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>users</arg>
 <arg>${uri}</arg>
 <arg>json=${body}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.263917" elapsed="0.464333"/>
+<status status="PASS" start="2024-07-28T14:46:16.334122" elapsed="0.556834"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.728907" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:16.891757" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <arg>${response}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.728600" elapsed="0.000345"/>
+<status status="PASS" start="2024-07-28T14:46:16.891380" elapsed="0.000434"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.729727" level="INFO">${payload} = {'name': 'George1', 'job': 'QA1', 'updatedAt': '2024-07-27T05:06:42.305Z'}</msg>
+<msg time="2024-07-28T14:46:16.892905" level="INFO">${payload} = {'name': 'George1', 'job': 'QA1', 'updatedAt': '2024-07-28T17:46:01.013Z'}</msg>
 <var>${payload}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.729082" elapsed="0.000669"/>
+<status status="PASS" start="2024-07-28T14:46:16.892025" elapsed="0.000909"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${payload['name']}</arg>
 <arg>${NAME}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.729864" elapsed="0.000385"/>
+<status status="PASS" start="2024-07-28T14:46:16.893113" elapsed="0.000634"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${payload['job']}</arg>
 <arg>${JOB}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.730340" elapsed="0.000341"/>
+<status status="PASS" start="2024-07-28T14:46:16.893891" elapsed="0.000637"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.json()}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.730769" elapsed="0.000378"/>
+<status status="PASS" start="2024-07-28T14:46:16.894700" elapsed="0.000619"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${IdUser}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.731229" elapsed="0.000110"/>
+<status status="PASS" start="2024-07-28T14:46:16.895454" elapsed="0.000174"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.263500" elapsed="0.467899"/>
+<status status="PASS" start="2024-07-28T14:46:16.333585" elapsed="0.562147"/>
 </kw>
-<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.333419" elapsed="0.562371"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.333287" elapsed="0.562564"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="status code da resposta sera 200" owner="ResourceBDD" source_name="status code da resposta sera ${status_code}">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-27T02:06:57.732784" level="INFO">Argument types are:
+<msg time="2024-07-28T14:46:16.897803" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${status_code}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.732229" elapsed="0.000640"/>
+<status status="PASS" start="2024-07-28T14:46:16.897193" elapsed="0.000898"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.731621" elapsed="0.001325"/>
+<status status="PASS" start="2024-07-28T14:46:16.896896" elapsed="0.001270"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.262783" elapsed="0.470312"/>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.896526" elapsed="0.001683"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.896156" elapsed="0.002108"/>
+</kw>
+<kw name="E o tipo do campo sera validado" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o tipo do campo sera validado" owner="ResourceBDD">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.899287" elapsed="0.000146"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.900444" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.900236" elapsed="0.000231"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.900575" elapsed="0.000206"/>
+</kw>
+<var name="${item}">name</var>
+<status status="PASS" start="2024-07-28T14:46:16.900119" elapsed="0.000791"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.901493" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.901097" elapsed="0.000462"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.901682" elapsed="0.000203"/>
+</kw>
+<var name="${item}">job</var>
+<status status="PASS" start="2024-07-28T14:46:16.901012" elapsed="0.000907"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:16.902427" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.902104" elapsed="0.000348"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.902570" elapsed="0.000190"/>
+</kw>
+<var name="${item}">updatedAt</var>
+<status status="PASS" start="2024-07-28T14:46:16.902016" elapsed="0.000834"/>
+</iter>
+<var>${item}</var>
+<value>@{response.json()}</value>
+<status status="PASS" start="2024-07-28T14:46:16.899518" elapsed="0.003364"/>
+</for>
+<status status="PASS" start="2024-07-28T14:46:16.899089" elapsed="0.003857"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.898793" elapsed="0.004185"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.898506" elapsed="0.004511"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.332310" elapsed="0.570881"/>
 </test>
-<test id="s1-t4" name="Cenario: DELETE" line="33">
-<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<test id="s1-t4" name="Cenario: DELETE" line="26">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que crie a sessao para &quot;https://reqres.in&quot;" owner="ResourceBDD" source_name="que crie a sessao para &quot;${url}&quot;">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:57.733966" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-28T14:46:16.904522" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>users</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-27T02:06:57.733840" elapsed="0.000288"/>
+<status status="PASS" start="2024-07-28T14:46:16.904420" elapsed="0.000288"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.733599" elapsed="0.000591"/>
+<status status="PASS" start="2024-07-28T14:46:16.904251" elapsed="0.000642"/>
 </kw>
-<kw name="Quando realizar um DELETE para o endpoint &quot;/api/users/&quot; para usuario criado" owner="ResourceBDD" source_name="Quando realizar um DELETE para o endpoint &quot;${uri}&quot; para usuario criado">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.903975" elapsed="0.000987"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.903748" elapsed="0.001266"/>
+</kw>
+<kw name="Quando realizar um DELETE para o endpoint &quot;/api/users/&quot; para usuario criado" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="realizar um DELETE para o endpoint &quot;/api/users/&quot; para usuario criado" owner="ResourceBDD" source_name="realizar um DELETE para o endpoint &quot;${uri}&quot; para usuario criado">
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:58.192072" level="INFO">DELETE Request : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:17.382657" level="INFO">DELETE Request : url=https://reqres.in/api/users/ 
  path_url=/api/users/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2024-07-27T02:06:58.192327" level="INFO">DELETE Response : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:17.382733" level="INFO">DELETE Response : url=https://reqres.in/api/users/ 
  status=204, reason=No Content 
- headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722056802&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=LxURjOaY0v88XisPvRM0Ctj%2Bz5LyfTJKY9TRCf8mrSg%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a075acba531-GRU'} 
+ headers={'Date': 'Sun, 28 Jul 2024 17:46:01 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1722188761&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4ISMHOwOz95zqp%2B5lW5XuNel5v6Bybtmm4HB9wHWiG4%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1722188761&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=4ISMHOwOz95zqp%2B5lW5XuNel5v6Bybtmm4HB9wHWiG4%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '8aa6afadd8111ab9-GRU'} 
  body=None 
  </msg>
-<msg time="2024-07-27T02:06:58.192544" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-28T14:46:17.382792" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-27T02:06:58.192882" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<msg time="2024-07-28T14:46:17.382897" level="INFO">${response} = &lt;Response [204]&gt;</msg>
 <var>${response}</var>
 <arg>users</arg>
 <arg>${uri}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-27T02:06:57.734574" elapsed="0.458344"/>
+<status status="PASS" start="2024-07-28T14:46:16.906277" elapsed="0.476638"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:58.193751" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<msg time="2024-07-28T14:46:17.383242" level="INFO">${response} = &lt;Response [204]&gt;</msg>
 <arg>${response}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.193369" elapsed="0.000432"/>
+<status status="PASS" start="2024-07-28T14:46:17.383077" elapsed="0.000191"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.734366" elapsed="0.459532"/>
+<status status="PASS" start="2024-07-28T14:46:16.906060" elapsed="0.477253"/>
 </kw>
-<kw name="Então status code da resposta sera 204" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:16.905522" elapsed="0.477820"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.905242" elapsed="0.478131"/>
+</kw>
+<kw name="Então status code da resposta sera 204" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="status code da resposta sera 204" owner="ResourceBDD" source_name="status code da resposta sera ${status_code}">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-27T02:06:58.195324" level="INFO">Argument types are:
+<msg time="2024-07-28T14:46:17.384570" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${status_code}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.194685" elapsed="0.000709"/>
+<status status="PASS" start="2024-07-28T14:46:17.384172" elapsed="0.000444"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:58.194272" elapsed="0.001177"/>
+<status status="PASS" start="2024-07-28T14:46:17.383945" elapsed="0.000713"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:57.733275" elapsed="0.462317"/>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.383742" elapsed="0.000939"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.383524" elapsed="0.001185"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:16.903412" elapsed="0.481384"/>
 </test>
-<test id="s1-t5" name="Cenario: Validar usuario deletado" line="38">
-<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="ResourceBDD" source_name="Dado que crie a sessao para &quot;${url}&quot;">
+<test id="s1-t5" name="Cenario: Validar usuario deletado" line="31">
+<kw name="Dado que crie a sessao para &quot;${BASE_URL}&quot;" owner="BDDpt-br" source_name="Dado ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="que crie a sessao para &quot;https://reqres.in&quot;" owner="ResourceBDD" source_name="que crie a sessao para &quot;${url}&quot;">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:58.196635" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-28T14:46:17.385768" level="INFO">Creating Session using : alias=users, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>users</arg>
 <arg>${url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-27T02:06:58.196514" elapsed="0.000316"/>
+<status status="PASS" start="2024-07-28T14:46:17.385685" elapsed="0.000193"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:58.196251" elapsed="0.000632"/>
+<status status="PASS" start="2024-07-28T14:46:17.385522" elapsed="0.000398"/>
 </kw>
-<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot; para usuario deletado" owner="ResourceBDD" source_name="Quando realizar um GET para o endpoint &quot;${uri}&quot; para usuario deletado">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.385329" elapsed="0.000612"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.385152" elapsed="0.000816"/>
+</kw>
+<kw name="Quando realizar um GET para o endpoint &quot;/api/users/&quot; para usuario deletado" owner="BDDpt-br" source_name="Quando ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="realizar um GET para o endpoint &quot;/api/users/&quot; para usuario deletado" owner="ResourceBDD" source_name="realizar um GET para o endpoint &quot;${uri}&quot; para usuario deletado">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-07-27T02:06:58.283745" level="INFO">GET Request : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:17.439461" level="INFO">GET Request : url=https://reqres.in/api/users/ 
  path_url=/api/users/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
  body=None 
  </msg>
-<msg time="2024-07-27T02:06:58.284328" level="INFO">GET Response : url=https://reqres.in/api/users/ 
+<msg time="2024-07-28T14:46:17.439600" level="INFO">GET Response : url=https://reqres.in/api/users/ 
  status=200, reason=OK 
- headers={'Date': 'Sat, 27 Jul 2024 05:06:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6152', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8a9a1a0a7f1f011e-GRU', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Sun, 28 Jul 2024 17:46:01 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1721843043&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=NBIqxiMdH4F0NR4gYBOtnIGVedSP433csj1ZwDY2zSk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '3307', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8aa6afb0df3d1d0b-GRU', 'Content-Encoding': 'gzip'} 
  body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
  </msg>
-<msg time="2024-07-27T02:06:58.284592" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-28T14:46:17.439712" level="INFO">/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-27T02:06:58.284955" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:17.439914" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>users</arg>
 <arg>${uri}</arg>
 <arg>${IdUser}</arg>
 <arg>headers=${HEADERS}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.197316" elapsed="0.087702"/>
+<status status="PASS" start="2024-07-28T14:46:17.386559" elapsed="0.053377"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-07-27T02:06:58.286188" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-28T14:46:17.440536" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <arg>${response}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.285615" elapsed="0.000666"/>
+<status status="PASS" start="2024-07-28T14:46:17.440273" elapsed="0.000294"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.json()}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.286574" elapsed="0.001431"/>
+<status status="PASS" start="2024-07-28T14:46:17.440665" elapsed="0.000745"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:58.197085" elapsed="0.091016"/>
+<status status="PASS" start="2024-07-28T14:46:17.386406" elapsed="0.055112"/>
 </kw>
-<kw name="Então status code da resposta sera 200" owner="ResourceBDD" source_name="Então status code da resposta sera ${status_code}">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.386225" elapsed="0.055347"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.386069" elapsed="0.055540"/>
+</kw>
+<kw name="Então status code da resposta sera 200" owner="BDDpt-br" source_name="Então ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="status code da resposta sera 200" owner="ResourceBDD" source_name="status code da resposta sera ${status_code}">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-27T02:06:58.289200" level="INFO">Argument types are:
+<msg time="2024-07-28T14:46:17.443014" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>${status_code}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-27T02:06:58.288745" elapsed="0.000519"/>
+<status status="PASS" start="2024-07-28T14:46:17.442604" elapsed="0.000467"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:58.288416" elapsed="0.000902"/>
+<status status="PASS" start="2024-07-28T14:46:17.442408" elapsed="0.000712"/>
 </kw>
-<status status="PASS" start="2024-07-27T02:06:58.195839" elapsed="0.093633"/>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.442147" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.441845" elapsed="0.001333"/>
+</kw>
+<kw name="E o tipo do campo sera validado" owner="BDDpt-br" source_name="E ${keyword}">
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="o tipo do campo sera validado" owner="ResourceBDD">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.444550" elapsed="0.000132"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.445506" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.445326" elapsed="0.000203"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.445709" elapsed="0.000146"/>
+</kw>
+<var name="${item}">page</var>
+<status status="PASS" start="2024-07-28T14:46:17.445234" elapsed="0.000651"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.446194" level="INFO">${res} = False</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.446043" elapsed="0.000170"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.446303" elapsed="0.000125"/>
+</kw>
+<var name="${item}">per_page</var>
+<status status="PASS" start="2024-07-28T14:46:17.445960" elapsed="0.000495"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.446732" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.446593" elapsed="0.000155"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.446830" elapsed="0.000120"/>
+</kw>
+<var name="${item}">total</var>
+<status status="PASS" start="2024-07-28T14:46:17.446522" elapsed="0.000461"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.447259" level="INFO">${res} = False</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.447126" elapsed="0.000146"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.447343" elapsed="0.000109"/>
+</kw>
+<var name="${item}">total_pages</var>
+<status status="PASS" start="2024-07-28T14:46:17.447054" elapsed="0.000423"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.447706" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.447595" elapsed="0.000125"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.447794" elapsed="0.000100"/>
+</kw>
+<var name="${item}">data</var>
+<status status="PASS" start="2024-07-28T14:46:17.447531" elapsed="0.000390"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-07-28T14:46:17.448181" level="INFO">${res} = True</msg>
+<var>${res}</var>
+<arg>"${item}".isalnum()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.448067" elapsed="0.000129"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Is Item:${item} Alphanumeric: ${res}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.448267" elapsed="0.000100"/>
+</kw>
+<var name="${item}">support</var>
+<status status="PASS" start="2024-07-28T14:46:17.447996" elapsed="0.000394"/>
+</iter>
+<var>${item}</var>
+<value>@{response.json()}</value>
+<status status="PASS" start="2024-07-28T14:46:17.444748" elapsed="0.003661"/>
+</for>
+<status status="PASS" start="2024-07-28T14:46:17.444349" elapsed="0.004106"/>
+</kw>
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2024-07-28T14:46:17.443799" elapsed="0.004682"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.443502" elapsed="0.005009"/>
+</kw>
+<status status="PASS" start="2024-07-28T14:46:17.384933" elapsed="0.063671"/>
 </test>
-<status status="PASS" start="2024-07-27T02:06:56.529441" elapsed="1.760628"/>
+<status status="PASS" start="2024-07-28T14:46:15.513021" elapsed="1.935936"/>
 </suite>
 <statistics>
 <total>

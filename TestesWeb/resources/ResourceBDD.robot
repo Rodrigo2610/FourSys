@@ -54,6 +54,9 @@ que esteja preenchendo os campos de address information "${ADDRESS}"
 que todos os campos estejam preenchidos
     validar campos
 
+que os campos obrigatorios nao estejam preenchidos
+    campos obrigatorio nao preenchidos
+
 #### QUANDO
 eu informar Nome e Email
   preencher nome e email
@@ -97,6 +100,15 @@ validar date of birt ${DATEOFBIRTH}
 
 o cadastro sera realizado com sucesso e sera exibida a mensagem "${MSGSUCESSO}"
     validar cadastro com sucesso ${MSGSUCESSO}
+o campo sera preenchido com sucesso
+    Sleep  2s
+
+o cadastro nao sera realizados e sera exibida mensagem "${CAMPOBRIGATORIO}"
+     Sleep  2s
+    #  ${tooltip}   Get Element Attribute     ${INPUTPASSWORD}   value
+    # #  Should Contain   ${tooltip}     (Optional) Please enter
+
+    #  Element Text Should Be    ${tooltip}    ${CAMPOBRIGATORIO}
 
 #### PASSOS   
 preencher nome e email
@@ -219,13 +231,21 @@ preencher mobile number
 validar campos
     Sleep  2s
 cadastrar conta
+    Sleep  2s
     Click Element   ${BOTAO_CREATE_ACOUNT}
-    Sleep  8s
-validar cadastro com sucesso ${MSGSUCESSO}
-    Element Text Should Be    ${MSGCADASTRO}    ${MSGSUCESSO}
-    Sleep  8s
-    
 
+validar cadastro com sucesso ${MSGSUCESSO}
+    Sleep  2s
+    Element Text Should Be    ${MSGCADASTRO}    ${MSGSUCESSO}
+
+campos obrigatorio nao preenchidos
+     Scroll Element Into View  xpath=./html/body/section/div/div/div/div[1]/form/button
+     Click Element   ${INPUT_MOBILENUMBER}
+     Sleep  8s
+# campos obrigatorios ${CAMPOBRIGATORIO}
+#      Sleep  2s
+#      Element Text Should Be    ${TOOLTIP}    ${CAMPOBRIGATORIO}
+    
 #### TEARDOWN
 # Fechar Navegador
     # Close Browser

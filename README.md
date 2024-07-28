@@ -1,5 +1,5 @@
-## Bem-vindo Robotizadores
+##PASSOS PARA CONFIGURAÇÃO E EXECUÇAO##
 
-Neste repositório deixarei os exemplos que citarei no Blog Robotizando Testes.
+RODAR O COMANDO EM /FOURSYS
 
-Acesse!(https://robotizandotestes.blogspot.com.br)
+pip3 install -r .\requirements.txt

@@ -4,32 +4,38 @@ Library    Collections
 Library    OperatingSystem
 Library    Process
 Library    FakerLibrary    locale=pt_BR
+Library    jsonschema
 
 *** Variables ***
 ${BASE_URL}    https://reqres.in
 # &{uri}         /api/users/2
 &{HEADERS}    Content-Type=application/json
-# ${response}
-# ${data}
-# ${Key}
+${response}
+${data}
+${Key}
 ${IdUser}
-# ${NAME}   George
-# ${JOB}    QA
+${payload}
+${NAME}   George
+${JOB}    QA
+${status_code}
 
 *** Keywords ***
-Dado que crie a sessao para "${url}"
+
+#### DADO
+que crie a sessao para "${url}"
     Create Session    users    ${url}
 
-Quando realizar um GET para o endpoint "${uri}"
+#### QUANDO
+realizar um GET para o endpoint "${uri}"
     ${response}    GET On Session    users    ${uri}  ${IdUser}   headers=${HEADERS}
     Set Test Variable    ${response}
 
-Quando realizar um GET para o endpoint "${uri}" para usuario deletado
+realizar um GET para o endpoint "${uri}" para usuario deletado
     ${response}    GET On Session    users    ${uri}  ${IdUser}   headers=${HEADERS}
     Set Test Variable    ${response}
     log to console  ${response.json()}
     
-Quando realizar um POST para o endpoint "${uri}" com nome "${NAME}" e job "${JOB}"
+realizar um POST para o endpoint "${uri}" com nome "${NAME}" e job "${JOB}"
     ${body}       Create Dictionary   name=${NAME}  job=${JOB}
     ${response}    Post On Session     users    ${uri}    json=${body}    headers=${HEADERS}
     Set Test Variable    ${response}
@@ -41,7 +47,7 @@ Quando realizar um POST para o endpoint "${uri}" com nome "${NAME}" e job "${JOB
     log to console  ${response.json()}
     log to console  ${IdUser}
 
-Quando realizar um PUT para o endpoint "${uri}" alterando os dados nome "${NAME}" e job "${JOB}"
+realizar um PUT para o endpoint "${uri}" alterando os dados nome "${NAME}" e job "${JOB}"
     ${body}       Create Dictionary   name=${NAME}  job=${JOB}
     ${response}    Put On Session     users    ${uri}    json=${body}    headers=${HEADERS}
     Set Test Variable    ${response}
@@ -51,7 +57,7 @@ Quando realizar um PUT para o endpoint "${uri}" alterando os dados nome "${NAME}
     log to console  ${response.json()}
     log to console  ${IdUser}
 
-Quando realizar um DELETE para o endpoint "${uri}" para usuario criado
+realizar um DELETE para o endpoint "${uri}" para usuario criado
     # ${body}       Create Dictionary   name=${NAME}  job=${JOB}
     ${response}    DELETE On Session     users    ${uri}       headers=${HEADERS}
     Set Test Variable    ${response}
@@ -61,9 +67,22 @@ Quando realizar um DELETE para o endpoint "${uri}" para usuario criado
     # log to console  ${response.json()}
     # log to console  ${IdUser}
 
-Então status code da resposta sera ${status_code}
+#### ENTÃO
+status code da resposta sera ${status_code}
     Should Be Equal As Numbers    ${response.status_code}    ${status_code}
 
-E sera retornado no response a chave "${Key}"
+#### E
+o schema sera validado
+    ${schema}    Get Binary File    ../resources/Schema.json
+    ${schema}    evaluate    json.loads('''${schema}''')    json
+    validate    ${payload}    schema=${schema}
+
+sera retornado no response a chave "${Key}"
     Should Contain    ${response.json()}    ${Key}
 
+o tipo do campo sera validado
+     Log To Console        \n
+     FOR    ${item}    IN    @{response.json()}
+         ${res}=     Evaluate    "${item}".isalnum() 
+         Log To Console    Is Item:${item} Alphanumeric: ${res}        
+     END
